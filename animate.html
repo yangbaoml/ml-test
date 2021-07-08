@@ -24,8 +24,8 @@
     }
 
     .list .rowup {
-      /* animation: 10s animate linear infinite normal; */
-      animation: 10s animate normal;
+      animation: 10s animate linear infinite normal;
+      /* animation: 10s animate normal; */
       position: relative;
       font-size: 16px;
       color: #999999;
@@ -45,10 +45,10 @@
       text-align: center;
     }
 
-    .item:nth-child(1) {
+    /* .item:nth-child(1) {
       color: pink;
       font-size: 18px;
-    }
+    } */
   </style>
 </head>
 
@@ -71,6 +71,20 @@
         <div class="item" id="item">8.test</div>
         <div class="item" id="item">9.mlml</div>
       </div>
+
+      <div class="s" id="share">
+        <div class="item" id="item1">1. Share and get 6 free books for 7 days.</div>
+        <div class="item">2. Share and get a lucky draw. 100% win rate.</div>
+        <div class="item" id="item">3. The luckiest ones who receive lifetime free cards will be able to read all of the
+          books atall of the time.</div>
+        <div class="item" id="item">4. One device is limited to one chance.</div>
+        <div class="item" id="item">5. If you require any further information, feel free to contact us via email <a
+            href=" ">support@funstory.zendesk.com</a></div>
+        <div class="item" id="item">6.mesage</div>
+        <div class="item" id="item">7.babelnovel</div>
+        <div class="item" id="item">8.test</div>
+        <div class="item" id="item">9.mlml</div>
+      </div>
     </div>
 
   </div>
@@ -81,7 +95,7 @@
   let share = document.getElementById("rowup");
   let shareTwo = document.getElementById("item-two");
   share.addEventListener("animationiteration", listener, false);
-  share.addEventListener("animationstart", listener, false);
+  // share.addEventListener("animationstart", fun, false);
 
   function fun() {
     setInterval(() => {
