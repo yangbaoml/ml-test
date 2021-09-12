@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <style>
+    .father {
+      width: 100%;
+      height: 100%;
+      background-color: lightgoldenrodyellow;
+      position: relative;
+    }
+
+    .child {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 888;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div id="target" class="child"></div>
+  </div>
+</body>
+<script>
+  let target = document.getElementById("target");
+  let downPosition = {
+    x: 0,
+    y: 0
+  };
+  let movePosition = {
+    x: 0,
+    y: 0
+  };
+  let targetPosition = {
+    x: 0,
+    y: 0
+  };
+  let currentPosition = {
+    x: 0,
+    y: 0
+  };
+  let move = false;
+  let update = (e, update = false) => {
+    movePosition.x = e.clientX;
+    movePosition.y = e.clientY;
+    targetPosition.x = currentPosition.x + movePosition.x - downPosition.x;
+    targetPosition.y = currentPosition.y + movePosition.y - downPosition.y;
+    //记录上次移动到的位置
+    if (update) {
+      currentPosition = { ...targetPosition };
+    }
+    console.log("currentPosition===", currentPosition);
+    target.style.transform = `translate(${targetPosition.x}px,${targetPosition.y}px)`
+  }
+  target.addEventListener("mousedown", (e) => {
+    move = true;
+    downPosition.x = e.clientX;
+    downPosition.y = e.clientY;
+    console.log("mousedown", downPosition);
+  })
+  target.addEventListener("mousemove", (e) => {
+    //只有鼠标按下的时候，才触发移动更新
+    if (move) {
+      update(e, false);
+    }
+  });
+  console.log("currentPosition", currentPosition);
+  target.addEventListener("mouseup", (e) => {
+    move = false;
+    update(e, true);
+  })
+  target.addEventListener("mouseleave", (e) => {
+    move = false;
+    update(e, true);
+
+  })
+</script>
+
+</html>
