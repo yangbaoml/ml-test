@@ -1,0 +1,59 @@
+<html>
+<header>
+  <style>
+    .div1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      text-align: center;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    .div2 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      text-align: center;
+      margin: 50px auto;
+      visibility: hidden;
+    }
+
+    .div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      text-align: center;
+      margin: 50px auto;
+      display: none;
+    }
+
+    .div3 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 50px auto;
+    }
+  </style>
+</header>
+
+<body>
+  <div class="div1" id="div1">这是opacity</div>
+  <div class="div2" id="div2">这是visib</div>
+  <div class="div">NONE</div>
+  <div class="div3">DIV</div>
+
+</body>
+<script>
+  let opaDiv = document.getElementById("div1");
+  opaDiv.addEventListener("click", function () {
+    console.log("这是opacity")
+  })
+  let visDiv = document.getElementById("div2");
+  console.log("visDiv---", visDiv);
+  visDiv.addEventListener("click", function () {
+    console.log("这是visib")
+  })
+</script>
+
+</html>
