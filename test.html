@@ -1,78 +1,40 @@
-<html>
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    .div {
-      width: 300px;
-      height: 300px;
-      background-color: plum;
-      position: fixed;
-      left: 0;
-      top: 0;
-      overflow: hidden;
-      /* top: 200px;
-      bottom: 200px;
-      left: 200px;
-      right: 200px;
-      margin: auto; */
-    }
-
-    .parent {
-      width: 200px;
-      height: 600px;
-      background-color: pink;
-      /* margin: 0 auto; */
-      position: fixed;
-      overflow: hidden;
-      top: 0;
-      right: 0;
-    }
-
-    .p2 {
-      width: 100px;
-      height: 800px;
-      background-color: yellowgreen;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      overflow: hidden;
-    }
-
-    .p1 {
-      width: 50px;
-      height: 900px;
-      background-color: blue;
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      overflow: hidden;
-    }
-    .text{
-      color:green;
-      }
+  .a{
+    width: 0;
+    height: 0;
+    border-width: 100px;
+    border-style: solid;
+    border-color: transparent pink transparent transparent;
+    transform: rotate(90deg); /*顺时针旋转90°*/
+  }
   </style>
-</header>
-
+</head>
 <body>
-  <div id="dv">
-    This is the granddaughter of the Secret Service's Director Su, the son of Director Fang, and this is the young lady of the Shen Family..." dao ba nan muttered as he picked out the children from the crowd.
-    After counting them all, he realized that there was nothing he could choose. Almost all of the children in front of him were of noble birth, and each of them had an extraordinary family background.
-    "I'm stupid. This is a kindergarten for nobles in Ann City. It would be strange if these children were not of noble birth."
-    Dao ba nan cursed in his heart. He glanced at Ye Meng from the corner of his eye, and his heart skipped a beat.
-    This child did not seem to have any backgrou
-  </div>
+  <div class="a"></div>
+  <label>bbb</label>
+  <ul id="ul">
+    父
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
 </body>
 <script>
-  function onClick() {
-    console.log(111);
-    localStorage.setItem("name", "mali");
-    sessionStorage.setItem("name", "mali");
-  }
-  let ele= document.getElementById("dv");
-ele.addEventListener("mouseup",function(e){
-let selObj = window.getSelection().toString();
-console.log("window====",selObj.toString())
-ele.innerHTML=ele.innerHTML.replace(selObj,`<h1>${selObj}</h1>`);
-})
-</script>
+  let dom = document.getElementById('ul');
+  dom.addEventListener('click',function(e){
+console.log('target',e.target);
+console.log('currenttarget',e.currentTarget)
 
+  })
+</script>
 </html>
