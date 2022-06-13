@@ -25,6 +25,7 @@ var lengthOfLongestSub = function (s) {
     let index = arr.indexOf(s[i]);
     if (index !== -1) {
       arr.splice(0, index + 1);
+      console.log('arr====',arr);
     }
     arr.push(s[i]);
     max = Math.max(arr.length, max);
@@ -32,4 +33,4 @@ var lengthOfLongestSub = function (s) {
   return max;
 }
 let s1 = "abcabcbb";
-lengthOfLongestSub(s1);
+console.log('lengthOfLongestSub(s1);===',lengthOfLongestSub(s1));
