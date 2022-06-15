@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ <div>
+   <input id="ipt" />
+   <div id="search"></div>
+ </div>
+ <script>
+   let searchArr=['我们的祖国','我们的先烈','我们的祖先','祖先'];
+   let targerVal=[];
+   let inputEle = document.getElementById('ipt');
+   let farent = document.getElementById('search');
+
+   inputEle.addEventListener('change',(e)=>{
+    inputEle.value=e.target.value;
+    targerVal=searchArr.filter(item => item.includes(e.target.value));
+    targerVal.map(item => {
+  let ele =document.createElement('div');
+  ele.innerText=item;
+  farent.appendChild(ele);
+})
+   })
+   farent.addEventListener('click',(e) =>{
+    inputEle.value=e.target.innerText;
+   })
+ </script>
+</body>
+</html>
